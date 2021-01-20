@@ -15,7 +15,34 @@ class CartItem extends React.Component{
     }
 
     increaseQuantity = () => {
-        console.log("this",this.state);
+        // this.state.qty += 1;
+        // console.log("this",this.state);
+
+        // set state form-1
+        // this.setState({
+        //     qty: this.state.qty +1
+        // });
+
+        //set state form-2
+        this.setState((prevState) =>{
+            return{
+                qty: prevState.qty+1,
+            }
+        });
+    }
+
+    decreaseQuantity = () => {
+        this.setState((prevState) =>{
+            return{
+                qty: prevState.qty-1
+            }
+        });
+    }
+
+    delete = () =>{
+        this.setState({
+            qty: 0
+        });
     }
 
     // to make our class component a react component, we will add a method
@@ -43,11 +70,13 @@ class CartItem extends React.Component{
                             alt="decrease" 
                             className="action-icons" 
                             src="https://www.flaticon.com/svg/vstatic/svg/992/992683.svg?token=exp=1611064443~hmac=0eff4dab5b34dfd00b0c33e57ffc09cd" 
+                            onClick = {this.decreaseQuantity}
                         />
                         <img 
                             alt="delete" 
                             className="action-icons" 
                             src="https://www.flaticon.com/svg/vstatic/svg/72/72205.svg?token=exp=1611064557~hmac=a544057b2cadb3c9b5d17b7a3e131f52" 
+                            onClick = {this.delete}
                         />
                     </div>
                 </div>
