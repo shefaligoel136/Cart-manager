@@ -12,6 +12,7 @@ class CartItem extends React.Component{
             img : ''
         }
         //this.increaseQuantity = this.increaseQuantity.bind(this)
+        //this.testing();
     }
 
     increaseQuantity = () => {
@@ -50,6 +51,27 @@ class CartItem extends React.Component{
             qty: 0
         });
     }
+
+    // testing(){
+    //     const promise = new Promise((resolve,reject) => {
+    //         setTimeout(() => {
+    //             resolve('done');
+    //         }, 5000);
+    //     })
+
+    //     promise.then(() => {
+    //         this.setState({
+    //             qty: this.state.qty + 10
+    //         });
+    //         this.setState({
+    //             qty: this.state.qty + 10
+    //         });
+    //         this.setState({
+    //             qty: this.state.qty + 10
+    //         });
+    //         console.log('state',this.state);
+    //     })
+    // }
 
     // to make our class component a react component, we will add a method
 
