@@ -1,6 +1,6 @@
 import React from 'react';
 
-class CartItem extends React.Component{
+const CartItem = (props) => {
 
 
 
@@ -64,15 +64,15 @@ class CartItem extends React.Component{
 
     // to make our class component a react component, we will add a method
 
-    render(){
-        console.log("this.props",this.props.product);
-        const{ price, title ,qty } = this.props.product;
-        const{product, onIncreaseQuantity, onDecreaseQuantity, onDelete} = this.props;
+    
+        
+        const{ price, title ,qty } = props.product;
+        const{product, onIncreaseQuantity, onDecreaseQuantity, onDelete} = props;
         return(
             <div className="cart-item">
                
                 <div className="left-block">
-                    <img style={ styles.image } />
+                    <img style={ styles.image } src = {product.img} />
                 </div>
                 <div className="right-block">
                     <div style={{ fontSize: 25 }} >{title}</div>
@@ -82,20 +82,20 @@ class CartItem extends React.Component{
                         <img 
                             alt="increase" 
                             className="action-icons" 
-                            src="https://www.flaticon.com/svg/vstatic/svg/992/992651.svg?token=exp=1611064483~hmac=16292115f5cfcec252d4cc1c829d773f" 
+                            src = "https://www.flaticon.com/svg/vstatic/svg/992/992651.svg?token=exp=1611767700~hmac=71bc4d8238aa3c3462c02dcda9871451"
                             onClick = {() => onIncreaseQuantity(product)}
                         />
 
                         <img 
                             alt="decrease" 
                             className="action-icons" 
-                            src="https://www.flaticon.com/svg/vstatic/svg/992/992683.svg?token=exp=1611064443~hmac=0eff4dab5b34dfd00b0c33e57ffc09cd" 
+                            src = "https://www.flaticon.com/svg/vstatic/svg/992/992683.svg?token=exp=1611767773~hmac=11da138b18c23e6db3d1a021c0bcc8aa"
                             onClick = {() => onDecreaseQuantity(product)}
                         />
                         <img 
                             alt="delete" 
                             className="action-icons" 
-                            src="https://www.flaticon.com/svg/vstatic/svg/72/72205.svg?token=exp=1611064557~hmac=a544057b2cadb3c9b5d17b7a3e131f52" 
+                            src = "https://www.flaticon.com/svg/vstatic/svg/72/72447.svg?token=exp=1611767810~hmac=0c25f9368d83b86cb09b7dae7b8c1d39"
                             onClick = {() => onDelete(product.id)}
                         />
                     </div>
@@ -103,7 +103,7 @@ class CartItem extends React.Component{
             </div>
         );
     }
-}
+
 
 const styles = {
     image:{
